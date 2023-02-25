@@ -1,9 +1,5 @@
 pipeline {
         agent { label 'JDK17' }
-        options {
-                timeout {time: 1, unit: 'HOURS'}
-                retry(2)
-        }
         triggers {
                 cron('0 * * * *')
         }
