@@ -14,6 +14,11 @@ pipeline {
                                 sh script: '/opt/maven/bin/mvn clean package'
                         }
                 }
+                stage ('Send Artifacts to Tomcat') {
+                        steps {
+                                sh script: 'sudo cp /home/jenkins/jenkins_root/workspace/Pet-Clinic-Pipeline/target/*.jar /opt/tomcat/webapps'
+                        }
+                }
                 stage ('Reporting & Archiving') {
                         steps {
                                  junit testResults: 'target/surefire-reports/*.xml'
