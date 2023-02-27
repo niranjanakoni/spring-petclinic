@@ -16,7 +16,7 @@ pipeline {
                 }
                 stage ('Send Artifacts to Tomcat') {
                         steps {
-                                sh script: 'sudo cp /home/jenkins/jenkins_root/workspace/Pet-Clinic-Pipeline/target/*.jar /opt/tomcat/webapps'
+                                sh script: 'sudo cp /home/user1/jenkins_root/workspace/Pet-Clinic-Pipeline/target/*.jar /opt/tomcat/webapps'
                         }
                 }
                 stage ('Reporting & Archiving') {
